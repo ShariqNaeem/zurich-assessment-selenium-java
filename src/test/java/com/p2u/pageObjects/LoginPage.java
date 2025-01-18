@@ -1,4 +1,4 @@
-package com.saucedemo.pageObjects;
+package com.p2u.pageObjects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -6,10 +6,9 @@ import org.openqa.selenium.WebElement;
 
 public class LoginPage {
     private WebDriver driver;
-    By userNameField = By.cssSelector("[data-test=\"username\"]");
-    By passwordField = By.cssSelector("[data-test=\"password\"]");
-    By loginBtn = By.cssSelector("[data-test=\"login-button\"]");
-    By errorMsg = By.className("error-message-container");
+    By userNameField = By.id("mb_id");
+    By passwordField = By.id("mb_password");
+    By loginBtn = By.id("form-submit1");
     public LoginPage(WebDriver driver){
         this.driver = driver;
     }
@@ -26,7 +25,9 @@ public class LoginPage {
         return driver.findElement(loginBtn);
     }
 
-    public WebElement getErrorMsg() {
-        return driver.findElement(errorMsg);
+    public void loginUser(String username, String password){
+        getUserNameField().sendKeys(username);
+        getPasswordField().sendKeys(password);
+        getLoginBtn().click();
     }
 }

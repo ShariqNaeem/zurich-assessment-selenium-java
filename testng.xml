@@ -2,8 +2,7 @@
 <suite name="Test Suite">
     <test name="Test Cases">
         <classes>
-            <class name="com.saucedemo.tests.LoginTest" />
-            <class name="com.saucedemo.tests.LoginUserTest" />
+            <class name="com.p2u.tests.LoginTest" />
         </classes>
     </test>
 </suite>

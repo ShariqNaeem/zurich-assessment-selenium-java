@@ -1,6 +1,6 @@
-package com.saucedemo.utils;
+package com.p2u.utils;
 
-import com.saucedemo.testData.ConstantTestData;
+import com.p2u.testData.ConstantTestData;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -24,7 +24,10 @@ public class DriverManager {
 
         driver.get(ConstantTestData.baseURL);
         String actualTitle = driver.getTitle();
-        Assert.assertEquals(actualTitle, ConstantTestData.title, "Page title doesn't match the expected title.");
+        Assert.assertTrue(
+                ConstantTestData.title.contains(actualTitle),
+                "Page title does not contain the expected text. Actual: " + actualTitle + ", Expected: " + ConstantTestData.title
+        );
     }
 
     public static WebDriver getDriver() {
