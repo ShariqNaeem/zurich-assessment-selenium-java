@@ -3,6 +3,8 @@
     <test name="Test Cases">
         <classes>
             <class name="com.p2u.tests.LoginTest" />
+            <class name="com.p2u.tests.RegisterTest" />
+            <class name="com.p2u.tests.PurchaseTest" />
         </classes>
     </test>
 </suite>
