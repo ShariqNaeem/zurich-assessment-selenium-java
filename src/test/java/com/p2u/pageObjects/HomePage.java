@@ -9,6 +9,8 @@ public class HomePage {
     By loginBtn = By.cssSelector("a.single-line-button3.mobile-active-right");
     By mainSlider = By.cssSelector("section.main-wrapper div.hero-left");
     By logoutBtn = By.cssSelector("a[href=\"https://dev.p2u.kr/bbs/logout.php\"]");
+    By hitProducts = By.cssSelector("a[href=\"https://dev.p2u.kr/shop/listtype.php?type=1\"]");
+
     public HomePage(WebDriver driver){
         this.driver = driver;
     }
@@ -20,5 +22,8 @@ public class HomePage {
     }
     public WebElement getLogoutBtn() {
         return driver.findElement(logoutBtn);
+    }
+    public WebElement getHitProducts() {
+        return driver.findElement(hitProducts);
     }
 }

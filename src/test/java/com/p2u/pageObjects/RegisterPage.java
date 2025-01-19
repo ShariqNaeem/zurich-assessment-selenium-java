@@ -1,5 +1,6 @@
 package com.p2u.pageObjects;
 
+import com.p2u.testData.RegisterTestData;
 import com.p2u.utils.RandomUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -80,14 +81,14 @@ public class RegisterPage {
     public void fillRegistrationFormWithRandomData() {
         // Generate random data
         String randomId = RandomUtils.generateRandomString(null).substring(0, 5);
-        String randomPassword = "Password123";
+        String randomPassword = RegisterTestData.password;
         String randomName = RandomUtils.generateRandomString("Name");
         String randomNickName = RandomUtils.generateRandomString("Nick");
         String randomEmail = RandomUtils.generateRandomEmail();
         String randomPhone = RandomUtils.generateRandomPhoneNumber();
-        String randomZipcode = "12345";
-        String randomAddress1 = "123 Test Street";
-        String randomAddress2 = "Apt 456";
+        String randomZipcode = RegisterTestData.zipcode;
+        String randomAddress1 = RegisterTestData.address1;
+        String randomAddress2 = RegisterTestData.address2;
 
         // Fill form fields
         getIdRegistration().sendKeys(randomId);
